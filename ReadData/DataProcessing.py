@@ -5,7 +5,7 @@ import numpy as np
 from pandas import DataFrame
 
 #接ReadCsv.py笔记
-#(三)缺失值处理
+#4.3缺失值处理
 path = 'E:\\python_project\\DataAnalysis\\resource\\data\\usagov_bitly_data2012-03-16-1331923249.txt' #根据自己的路径填写
 #内置或第三方模块可以将JSON字符串转换成python字典对象
 records = [json.loads(line) for line in open(path)]

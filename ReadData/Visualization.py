@@ -6,6 +6,7 @@ import numpy as np
 import seaborn as sns
 
 warnings.filterwarnings("ignore")
+# 6 可视化
 # 直接从github上读取数据
 tips = sns.load_dataset('tips')
 # 画出总账单和小费回归关系图

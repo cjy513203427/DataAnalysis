@@ -1,6 +1,7 @@
 #encoding=utf-8
 import pandas as pd
 import numpy as np
+#4.5 值替换
 #首先创造一个Series（没有数据情况自己造）
 Series = pd.Series([8,7,2,3,6,5])
 print"原来的Series\n",(Series)
