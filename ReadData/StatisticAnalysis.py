@@ -24,7 +24,7 @@ Group2 = IS_t_test[IS_t_test['group'] == 2]['data']
 print "默认方差齐性\n", ttest_ind(Group1, Group2)
 # 方差不齐
 print("方差不齐")
-#print ttest_ind(Group1, Group2, equal_var=True)
+# print ttest_ind(Group1, Group2, equal_var=True)
 print ttest_ind(Group1, Group2, equal_var=False)
 
 # 5.1.2.配对样本t检验

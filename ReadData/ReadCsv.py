@@ -1,5 +1,6 @@
 # encoding=utf-8
 import pandas
+
 # 1.数据导入和导出
 # 1.1读取csv文件
 # 网络读取
@@ -33,21 +34,21 @@ print"选取第3行\n", dataFrame.iloc[3]
 # 选取第2到3行
 print"选取第三到五行\n ", dataFrame.iloc[2:4]  # 选取第2到第3行
 
-#选取第0行1列的元素
-print"选取第0行1列的元素\n",dataFrame.iloc[0,1]
+# 选取第0行1列的元素
+print"选取第0行1列的元素\n", dataFrame.iloc[0, 1]
 
-#2.2筛选出需要的数据
-#example:假设我们要筛选出小费大于$8的数据
-print"假设我们要筛选出小费大于$8的数据\n",dataFrame[dataFrame.tip>8]
+# 2.2筛选出需要的数据
+# example:假设我们要筛选出小费大于$8的数据
+print"假设我们要筛选出小费大于$8的数据\n", dataFrame[dataFrame.tip > 8]
 
-#筛选出小费大于$7或总账单大于$50的数据
-print "筛选出小费大于$7或总账单大于$50的数据\n",dataFrame[(dataFrame.tip>7)|(dataFrame.total_bill>50)]
+# 筛选出小费大于$7或总账单大于$50的数据
+print "筛选出小费大于$7或总账单大于$50的数据\n", dataFrame[(dataFrame.tip > 7) | (dataFrame.total_bill > 50)]
 
-#筛选出小费大于$7且总账单大于$50的数据
-print "筛选出小费大于$7且总账单大于$50的数据\n",dataFrame[(dataFrame.tip>7)&(dataFrame.total_bill>50)]
+# 筛选出小费大于$7且总账单大于$50的数据
+print "筛选出小费大于$7且总账单大于$50的数据\n", dataFrame[(dataFrame.tip > 7) & (dataFrame.total_bill > 50)]
 
-#假如加入了筛选条件后，我们只关心day和time
-print"假如加入了筛选条件后，我们只关心day和time\n",dataFrame[['day','time']][(dataFrame.tip>7)|(dataFrame.total_bill>50)]
+# 假如加入了筛选条件后，我们只关心day和time
+print"假如加入了筛选条件后，我们只关心day和time\n", dataFrame[['day', 'time']][(dataFrame.tip > 7) | (dataFrame.total_bill > 50)]
 
 # 3.统计描述
 # 对于数值数据，结果的索引将包括计数，平均值，标准差，最小值，
@@ -58,27 +59,27 @@ print"假如加入了筛选条件后，我们只关心day和time\n",dataFrame[['
 # 第25百分位数又称第一个四分位数（First Quartile），用Q1表示；第50百分位数又称第二个四分位数（Second Quartile），
 # 用Q2表示；第75百分位数又称第三个四分位数（Third Quartile）,用Q3表示。若求得第p百分位数为小数，可完整为整数。
 
-print "描述性统计\n",dataFrame.describe()
+print "描述性统计\n", dataFrame.describe()
 
 # 4.数据处理
 # 4.1数据转置
-print "矩阵转置\n",dataFrame.T
+print "数据转置\n", dataFrame.T
 
 # 4.2数据排序
 # 按tip列升序排序
-print "按tip列升序排序\n",dataFrame.sort_values(by='tip')
+print "按tip列升序排序\n", dataFrame.sort_values(by='tip')
 
 # 4.4数据分组
-#按day这一列进行分组
+# 按day这一列进行分组
 group = dataFrame.groupby('day')
 
-#打印每一组的第一行数据
-print "按day这一列进行分组,第一组\n",group.first()
+# 打印每一组的第一行数据
+print "按day这一列进行分组,第一组\n", group.first()
 
-#打印每一组的最后一行数据
-print "按day这一列进行分组，最后一组\n",group.last()
+# 打印每一组的最后一行数据
+print "按day这一列进行分组，最后一组\n", group.last()
 
-#4.5计数统计
-#统计性别
+# 4.5计数统计
+# 统计性别
 count = dataFrame['sex'].value_counts()
-print"统计性别\n",(count)
+print"统计性别\n", (count)
